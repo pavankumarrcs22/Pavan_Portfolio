@@ -1,13 +1,16 @@
-<nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary border-bottom border-body sticky-top" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-body sticky-top" data-bs-theme="dark">
   <div class="container-fluid">
-    <!-- <a class="navbar-brand" href="#">Mine</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#">Pavan</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button> -->
-    <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavDropdown">
-      <ul class="navbar-nav">
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-lg-center" id="navbarNavDropdown">
+      <ul class="navbar-nav align-items-lg-center">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+          <a class="nav-link" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About Me</a>
