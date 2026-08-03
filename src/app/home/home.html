@@ -12,9 +12,7 @@
             become a better software engineer.
         </p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center"> <button type="button"
-                class="btn btn-primary btn-lg px-4 gap-3">projects</button>
-            <!-- <button type="button"
-                class="btn btn-outline-secondary btn-lg px-4">Secondary</button> -->
+                class="btn btn-primary btn-lg px-4 gap-3" routerLink="/projects">projects</button>
         </div>
     </div>
 </div>
@@ -154,7 +152,7 @@
         or answering any questions. Feel free to reach out!
     </p>
     <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-5 p-2">
             <h4>Contact Information</h4>
             <p><strong>Gmail:</strong> pavankumar56214@gmail.com</p>
             <p><strong>Phone:</strong> +91 8951818XXXX</p>
@@ -166,7 +164,7 @@
                     class="btn btn-primary">LinkedIn</a>
             </div>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 px-5">
             <form #contactForm="ngForm" (ngSubmit)="sendEmail(contactForm)">
                 <div class="mb-3">
                     <input type="text" name="name" [(ngModel)]="contact.name" class="form-control"
