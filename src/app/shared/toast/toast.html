@@ -1,0 +1,9 @@
+@if (toastService.toast(); as toast) {
+<div
+    class="position-fixed top-0 end-0 p-3"
+    style="z-index:9999">
+    <div class="alert alert-{{toast.type}} shadow">
+        {{toast.message}}
+    </div>
+</div>
+}

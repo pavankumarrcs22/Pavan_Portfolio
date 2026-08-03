@@ -3,9 +3,16 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 
+import { provideToastr } from 'ngx-toastr';
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes)
+    provideRouter(routes),
+    provideToastr({
+      positionClass:'toast-top-right',
+      timeOut:2000,
+      preventDuplicates:true
+    })
   ]
 };

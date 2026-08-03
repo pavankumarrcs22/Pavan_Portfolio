@@ -102,6 +102,7 @@
 </div>
 
 <hr class="mx-5 mt-5">
+
 <section id="education" class="container py-4">
     <h2 class="text-center fw-bold">Education</h2>
     <p class="text-center text-muted mb-5">
@@ -128,7 +129,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-md-4">
             <div class="card edu h-100 shadow-sm bg-info-subtle shadow-lg">
                 <div class="card-body">
@@ -139,7 +139,64 @@
                 </div>
             </div>
         </div>
-
     </div>
+</section>
 
+<hr class="mx-5">
+
+<section id="contact" class="container py-4">
+    <h2 class="text-center fw-bold">Get In Touch</h2>
+    <p class="text-center text-muted mb-5">
+        I'm always open to discussing new opportunities, collaborating on projects,
+        or answering any questions. Feel free to reach out!
+    </p>
+    <div class="row">
+        <div class="col-md-5">
+            <h4>Contact Information</h4>
+            <p><strong>Gmail:</strong> pavankumar56214@gmail.com</p>
+            <p><strong>Phone:</strong> +91 8951818XXXX</p>
+            <p><strong>Location:</strong> Bengaluru, Karnataka, India</p>
+            <div class="mt-4">
+                <a href="https://github.com/pavankumarrcs22" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-dark me-2">GitHub</a>
+                <a href="https://linkedin.com/in/pavankumarr2004" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary">LinkedIn</a>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <form #contactForm="ngForm" (ngSubmit)="sendEmail(contactForm)">
+                <div class="mb-3">
+                    <input type="text" name="name" [(ngModel)]="contact.name" class="form-control"
+                        placeholder="Your Name" required #name="ngModel">
+                    <div class="text-danger" *ngIf="name.invalid && name.touched">
+                        Name is required.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <input type="email" name="email" [(ngModel)]="contact.email" class="form-control"
+                        placeholder="Your Email" required email #email="ngModel">
+                    <div class="text-danger" *ngIf="email.errors?.['required'] && email.touched">
+                        Email is required.
+                    </div>
+                    <div class="text-danger" *ngIf="email.errors?.['email'] && email.touched">
+                        Enter a valid email.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="subject" [(ngModel)]="contact.subject" class="form-control"
+                        placeholder="Subject">
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" name="message" [(ngModel)]="contact.message" rows="5"
+                        placeholder="Your Message" required #msg="ngModel"></textarea>
+                    <div class="text-danger" *ngIf="msg.invalid && msg.touched">
+                        Message is required.
+                    </div>
+                </div>
+                <button class="btn btn-primary"  [disabled]="contactForm.invalid" type="submit">
+                     {{ isSending ? 'Sending...' : 'Send Message' }}
+                </button>
+            </form>
+        </div>
+    </div>
 </section>

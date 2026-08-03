@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-body sticky-top" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/home"><img src="./assets/images/favicon.png" style="width: 35px; background-color: azure; border-radius: 60%;" alt="PAVAN"></a>
+    <a class="navbar-brand" routerLink="/home" (click)="scrollTo('home')"><img src="./assets/images/favicon.png" style="width: 35px; background-color: azure; border-radius: 60%;" alt="PAVAN"></a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
       aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,10 +10,10 @@
     <div class="collapse navbar-collapse justify-content-lg-center" id="navbarNavDropdown">
       <ul class="navbar-nav align-items-lg-center">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+          <a class="nav-link" (click)="scrollTo('home')" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#about">About Me</a>
+          <a class="nav-link" (click)="scrollTo('about')">About Me</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Projects</a>
@@ -23,8 +23,9 @@
             More
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#skills">Skills</a></li>
-            <li><a class="dropdown-item" href="#education">Education</a></li>
+            <li><a (click)="scrollTo('contact')" class="dropdown-item">Contact</a></li>
+            <li><a class="dropdown-item" (click)="scrollTo('skills')">Skills</a></li>
+            <li><a class="dropdown-item" (click)="scrollTo('education')">Education</a></li>
             <li><a class="dropdown-item" href="#">Certifications</a></li>
           </ul>
         </li>
