@@ -1,6 +1,9 @@
 <div class="px-4 py-5 my-0 text-center" id="home">
     <img class="d-block mx-auto mb-4 profile" src="./assets/images/profile.jpeg" alt="Pavan Kumar">
-    <h1 class="display-5 fw-bold text-body-emphasis">Hello, I'm Pavan Kumar</h1>
+    <h1 class="display-5 fw-bold text-body-emphasis"><span id="typo"></span></h1>
+    <h3>
+        <span id="typing"></span>
+    </h3>
     <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">
             Building Clean & Modern Web Applications
@@ -193,8 +196,8 @@
                         Message is required.
                     </div>
                 </div>
-                <button class="btn btn-primary"  [disabled]="contactForm.invalid" type="submit">
-                     {{ isSending ? 'Sending...' : 'Send Message' }}
+                <button class="btn btn-primary" [disabled]="contactForm.invalid" type="submit">
+                    {{ isSending ? 'Sending...' : 'Send Message' }}
                 </button>
             </form>
         </div>

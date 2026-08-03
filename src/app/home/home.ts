@@ -1,17 +1,17 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { Navbar } from '../navbar/navbar';
 import emailjs from '@emailjs/browser';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ToastService } from '../shared/services/toast';
-
+import Typed from 'typed.js';
 @Component({
   selector: 'app-home',
   imports: [FormsModule, CommonModule],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home {
+export class Home implements AfterViewInit {
   constructor(private toastr: ToastService) {
 
   }
@@ -54,5 +54,26 @@ export class Home {
         this.isSending = false;
       });
   }
-
+  ngAfterViewInit(): void {
+    new Typed('#typo', {
+      strings: ["Hello, I'm Pavan Kumar"],
+      typeSpeed: 60,
+      showCursor: false,
+      loop: false,
+      onComplete: () => {
+        new Typed('#typing', {
+          strings: [
+            'Software Engineer',
+            'Full Stack Developer',
+            'Tech Enthusiast'
+          ],
+          typeSpeed: 60,
+          backSpeed: 40,
+          backDelay: 1500,
+          loop: true,
+          showCursor: true
+        });
+      }
+    });
+  }
 }
